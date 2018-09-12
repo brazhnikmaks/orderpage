@@ -69,7 +69,6 @@ OrderFormation.prototype._setEvents = function () {
 					curProdId = curRow.attr("data-id");
 			_this._updatePrice(this.value, curProdId, curRow);
 		}
-		console.log(this.value);
 	});
 }
 
@@ -110,7 +109,7 @@ OrderFormation.prototype._drawProduct = function(product) {
 	}
 
 	var productRow = "<tr data-id=" + productId + "> \
-		<td><div class=\"js-removeProduct\">НАХУЙ</div></td> \
+		<td><div class=\"js-removeProduct\" style=\"cursor: pointer\">НАЙУХ</div></td> \
 		<td><img src=\"http://localhost/modx/assets/images/products/5/small/diper.jpg\" alt=\"\" /></td> \
 		<td><div>" + productCategory + "</div><div><b>" + productName + "</b></div></td> \
 		<td><input class=\"js-changeCount\" min=\"1\" type=\"number\" value=\"" + productCount + "\" /></td> \
@@ -145,6 +144,7 @@ OrderFormation.prototype._updatePrice = function(count, prodId, productRow) {
 	productRow.find(".js-price").text(newPrice);
 	productRow.find(".js-oldPrice").text(newOldprice);
 	productRow.find(".js-cashback").text(newCashback);
+	this._sum();
 }
 
 OrderFormation.prototype._sum = function() {
