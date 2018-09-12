@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Order Page</title>
+	<style>
+		.body {
+			margin: 0;
+			background-color: #eee;
+		}
+		.wrap {
+			display: block;
+			max-width: 960px;
+			margin: 2em auto 2em;
+			padding: 2em;
+			background: #fff;
+			border: 1px solid #ddd;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<h1>Оформление заказа</h1>
+
+		<br><br>
+
+		<form action="ajaxProduct.php" method="POST">
+			<div>
+				<select name="buyer">
+					<option value="">Выберите клиента из базы</option>
+				</select>
+			</div>
+			<div>
+				<table class="productsRow" style="display: none;">
+					<tr>
+						<td></td>
+						<td colspan="2">Продукт</td>
+						<td>Колисчество</td>
+						<td>Стоимость</td>
+						<td>Кешбэк</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<select name="product" id="productSelect">
+					<option value="0">Добавьте товар</option>
+					<option value="5">Deeper</option>
+					<option value="7">Piskocream</option>
+					<option value="8">Varyforte</option>
+					<option value="9">Psoridex</option>
+				</select>
+			</div>
+			<div class="sum">
+				<table style="table-layout: fixed; width: 100%;">
+					<tr>
+						<td></td>
+						<td align="center">
+							к оплате:
+							<span class="js-sumPrice">0</span>€
+						</td>
+						<td align="right">
+							<span class="js-sumCashback">0</span>€
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="orderpage.js"></script>
+	</body>
+</html> 
